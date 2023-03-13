@@ -108,7 +108,7 @@ h2 {
 
 .footer {
     position: fixed;
-    left: 50%;
+    left: 45%;
     bottom: 5px;
     padding: 10px;
     padding-left: 15px;
@@ -117,7 +117,7 @@ h2 {
     color: white;
     text-align: center;
     z-index: 1;
-    
+
     border-radius: 10px;
   }
 
