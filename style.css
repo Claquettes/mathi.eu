@@ -8,9 +8,9 @@ body {
     font-family: Consolas, monaco, monospace;
     font-size:xx-large;
     overflow: hidden;
-        background: linear-gradient(-45deg, #7a045e, #e73c7e, #ff8e0e, #ffc532);
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg, #7a045e, #e73c7e, #ff8e0e, #ffc532);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     }
     
     @keyframes gradient {
@@ -28,13 +28,13 @@ body {
 
 h1, p {
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 10px;
+    padding: 7px;
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
     z-index: 1;
     text-align: center;
-    margin: 50px 0;
+    margin: 30px 0;
     color: white;
     font-family: Consolas, monaco, monospace;
     font-weight: 100;
@@ -71,8 +71,6 @@ h2 {
 }
 
 .container_matieres{
-    width: 65%;
-    height: 25%;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 10px;
     margin-top: 10%;
