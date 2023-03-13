@@ -108,12 +108,11 @@ h2 {
 
 .footer {
     position: fixed;
-    left: 40%;
+    left: 50%;
     bottom: 5px;
     padding: 10px;
     padding-left: 15px;
-    padding-right: 15px;
-    width: 20%;    
+    padding-right: 15px;  
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
     text-align: center;
