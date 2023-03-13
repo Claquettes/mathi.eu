@@ -92,7 +92,7 @@ h2 {
 
 .matiere{
     color: #ffffff;
-    width: 100%;
+    width: 60%;
     height: 100%;
     padding: 0;
     display: flex;
@@ -103,7 +103,7 @@ h2 {
 }
 
 .matiere:hover{
-    background-color: #454444;
+    background-color: #cecece;
     cursor: pointer;
     transform: scale(1.1);
     transition: 0.2s;
