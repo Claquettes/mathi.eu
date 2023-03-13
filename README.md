@@ -1,2 +1,1 @@
-# PolyRessources
-on the flux
+Hosted at https://ponton-mathi.eu
