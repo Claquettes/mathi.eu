@@ -27,6 +27,8 @@ body {
 
 
 h1, p {
+    margin-left: 8%;
+    margin-right: 8%;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 7px;
     padding-left: 20px;
@@ -76,6 +78,7 @@ h2 {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 10px;
     margin-top: 10%;
+    margin-bottom: 10%;
     display: flex;
     color: #ffffff;
     flex-direction: column;
