@@ -109,13 +109,11 @@ h2 {
 h1:hover{
     transform: scale(1.1);
     transition: 0.2s;
-    border-radius: 5px;
 }
 
 h2:hover{
     transform: scale(1.1);
     transition: 0.2s;
-    border-radius: 5px;
 }
 
 .footer {
