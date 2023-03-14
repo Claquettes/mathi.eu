@@ -56,7 +56,9 @@ h2 {
     font-size: medium;
 }
 
-
+.container{
+    border: 1px solid white;
+}
 .menu_principal{
     width: 100%;
     height: 10%;
