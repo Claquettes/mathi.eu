@@ -59,7 +59,7 @@ h2 {
 }
 
 .container{
-    margin-top: 2%;
+    margin-top: 3%;
     height: 200%;
     padding: 7%;
     border: 5px solid white;
@@ -121,6 +121,11 @@ h1:hover{
 
 h2:hover{
     transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.container:hover{
+    transform: scale(1.05);
     transition: 0.5s;
 }
 
