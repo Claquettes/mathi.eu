@@ -59,9 +59,10 @@ h2 {
 }
 
 .container{
-    margin-top: 10%;
-    padding: 15%;
-    border: 3px solid white;
+    margin-top: 2%;
+    height: 200%;
+    padding: 7%;
+    border: 5px solid white;
 }
 .menu_principal{
     width: 100%;
