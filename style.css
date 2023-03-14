@@ -105,13 +105,15 @@ h2 {
     transition: 0.2s;
     border-radius: 5px;
 }
-.h1:hover{
+
+h1:hover{
     background-color: #cecece;
     transform: scale(1.1);
     transition: 0.2s;
     border-radius: 5px;
 }
-.h2:hover{
+
+h2:hover{
     background-color: #cecece;
     transform: scale(1.1);
     transition: 0.2s;
