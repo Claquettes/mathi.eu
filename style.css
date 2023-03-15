@@ -63,9 +63,7 @@ h2 {
     height: 200%;
     padding: 7%;
     border: 5px solid white;
-    /* smooth transition */
-    transform: scale(1.00);
-    transition: 0.5s;
+    
 }
 .menu_principal{
     width: 100%;
