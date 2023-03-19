@@ -6,37 +6,37 @@
     var particles = [];
 
     function Particle(x, y, dx, dy, radius, color) {
-      prticule.x = x;
-      prticule.y = y;
-      prticule.dx = dx;
-      prticule.dy = dy;
-      prticule.radius = radius;
-      prticule.color = color;
+      this.x = x;
+      this.y = y;
+      this.dx = dx;
+      this.dy = dy;
+      this.radius = radius;
+      this.color = color;
 
-      prticule.draw = function() {
+      this.draw = function() {
         ctx.beginPath();
-        ctx.moveTo(prticule.x + prticule.radius * Math.cos(0), prticule.y + prticule.radius * Math.sin(0));
+        ctx.moveTo(this.x + this.radius * Math.cos(0), this.y + this.radius * Math.sin(0));
         for (var i = 1; i < 6; i++) { // on fait un Hexagone
-          ctx.lineTo(prticule.x + prticule.radius * Math.cos(i * 2 * Math.PI / 6), prticule.y + prticule.radius * Math.sin(i * 2 * Math.PI / 6));
+          ctx.lineTo(this.x + this.radius * Math.cos(i * 2 * Math.PI / 6), this.y + this.radius * Math.sin(i * 2 * Math.PI / 6));
         }
-        ctx.fillStyle = prticule.color;
+        ctx.fillStyle = this.color;
         ctx.fill();
         ctx.closePath();
       }
 
-      prticule.update = function() {
-        if (prticule.x + prticule.radius > width || prticule.x - prticule.radius < 0) {
-          prticule.dx = -prticule.dx;
+      this.update = function() {
+        if (this.x + this.radius > width || this.x - this.radius < 0) {
+          this.dx = -this.dx;
         }
 
-        if (prticule.y + prticule.radius > height || prticule.y - prticule.radius < 0) {
-          prticule.dy = -prticule.dy;
+        if (this.y + this.radius > height || this.y - this.radius < 0) {
+          this.dy = -this.dy;
         }
         // on fait rebondir les particules sur les bords de la fenêtre
-        prticule.x += prticule.dx;
-        prticule.y += prticule.dy;
+        this.x += this.dx;
+        this.y += this.dy;
         // on fait bouger les particuless
-        prticule.draw();
+        this.draw();
       }
     }
 
@@ -46,7 +46,7 @@
         var y = Math.random() * height;
         var dx = (Math.random() - 0.5) * 2;
         var dy = (Math.random() - 0.5) * 2;
-        var radius = Math.random() * 100 + 20;
+        var radius = Math.random() * 95 + 20;
         particles.push(new Particle(x, y, dx, dy, radius, "#FFF"));
       }
     }
@@ -65,7 +65,7 @@
     anime({
       targets: 'canvas',
       duration: 5000,
-      easing: 'linear',
+      easing: 'easeIn',
       opacity: 0,
       loop: true
     });
