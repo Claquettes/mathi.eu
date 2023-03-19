@@ -46,7 +46,7 @@
         var y = Math.random() * height;
         var dx = (Math.random() - 0.5) * 2;
         var dy = (Math.random() - 0.5) * 2;
-        var radius = Math.random() * 50 + 1;
+        var radius = Math.random() * 100 + 20;
         particles.push(new Particle(x, y, dx, dy, radius, "#FFF"));
       }
     }

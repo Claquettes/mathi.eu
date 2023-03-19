@@ -11,6 +11,7 @@ body {
     background: linear-gradient(-45deg, #7a045e, #e73c7e, #ff8e0e, #ffc532);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    transition: 0.5s;   
     }
     
     @keyframes gradient {
@@ -63,6 +64,7 @@ h2 {
     height: 200%;
     padding: 7%;
     border: 5px solid white;
+    transition: 0.5s;
     
 }
 .menu_principal{
@@ -105,6 +107,7 @@ h2 {
     text-decoration: none;
     text-align: center;
     z-index: 1;
+    transition: 0.5s;
 }
 
 .matiere:hover{
@@ -141,7 +144,6 @@ canvas {
 
 .footer {
     position: fixed;
-    
     bottom: 5px;
     padding: 10px;
     padding-left: 15px;
