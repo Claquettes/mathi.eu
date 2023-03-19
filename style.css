@@ -129,6 +129,14 @@ h2:hover{
     transform: scale(1.05);
     transition: 0.5s;
 }
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+  }
 
 .footer {
     position: fixed;
