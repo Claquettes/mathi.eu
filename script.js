@@ -6,47 +6,47 @@
     var particles = [];
 
     function Particle(x, y, dx, dy, radius, color) {
-      this.x = x;
-      this.y = y;
-      this.dx = dx;
-      this.dy = dy;
-      this.radius = radius;
-      this.color = color;
+      prticule.x = x;
+      prticule.y = y;
+      prticule.dx = dx;
+      prticule.dy = dy;
+      prticule.radius = radius;
+      prticule.color = color;
 
-      this.draw = function() {
+      prticule.draw = function() {
         ctx.beginPath();
-        ctx.moveTo(this.x + this.radius * Math.cos(0), this.y + this.radius * Math.sin(0));
-        for (var i = 1; i < 6; i++) {
-          ctx.lineTo(this.x + this.radius * Math.cos(i * 2 * Math.PI / 6), this.y + this.radius * Math.sin(i * 2 * Math.PI / 6));
+        ctx.moveTo(prticule.x + prticule.radius * Math.cos(0), prticule.y + prticule.radius * Math.sin(0));
+        for (var i = 1; i < 6; i++) { // on fait un Hexagone
+          ctx.lineTo(prticule.x + prticule.radius * Math.cos(i * 2 * Math.PI / 6), prticule.y + prticule.radius * Math.sin(i * 2 * Math.PI / 6));
         }
-        ctx.fillStyle = this.color;
+        ctx.fillStyle = prticule.color;
         ctx.fill();
         ctx.closePath();
       }
 
-      this.update = function() {
-        if (this.x + this.radius > width || this.x - this.radius < 0) {
-          this.dx = -this.dx;
+      prticule.update = function() {
+        if (prticule.x + prticule.radius > width || prticule.x - prticule.radius < 0) {
+          prticule.dx = -prticule.dx;
         }
 
-        if (this.y + this.radius > height || this.y - this.radius < 0) {
-          this.dy = -this.dy;
+        if (prticule.y + prticule.radius > height || prticule.y - prticule.radius < 0) {
+          prticule.dy = -prticule.dy;
         }
-
-        this.x += this.dx;
-        this.y += this.dy;
-
-        this.draw();
+        // on fait rebondir les particules sur les bords de la fenêtre
+        prticule.x += prticule.dx;
+        prticule.y += prticule.dy;
+        // on fait bouger les particuless
+        prticule.draw();
       }
     }
 
     function init() {
-      for (var i = 0; i < 200; i++) {
+      for (var i = 0; i < 70; i++) {
         var x = Math.random() * width;
         var y = Math.random() * height;
         var dx = (Math.random() - 0.5) * 2;
         var dy = (Math.random() - 0.5) * 2;
-        var radius = Math.random() * 6 + 1;
+        var radius = Math.random() * 50 + 1;
         particles.push(new Particle(x, y, dx, dy, radius, "#FFF"));
       }
     }
