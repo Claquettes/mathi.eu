@@ -4,6 +4,7 @@
     var height = canvas.height = window.innerHeight;
 
     var particles = [];
+    var angles = 3; // on fait un Hexagone
 
     function Particle(x, y, dx, dy, radius, color) {
       this.x = x;
@@ -16,8 +17,8 @@
       this.draw = function() {
         ctx.beginPath();
         ctx.moveTo(this.x + this.radius * Math.cos(0), this.y + this.radius * Math.sin(0));
-        for (var i = 1; i < 6; i++) { // on fait un Hexagone
-          ctx.lineTo(this.x + this.radius * Math.cos(i * 2 * Math.PI / 6), this.y + this.radius * Math.sin(i * 2 * Math.PI / 6));
+        for (var i = 1; i < angles; i++) { 
+          ctx.lineTo(this.x + this.radius * Math.cos(i * 2 * Math.PI / angles), this.y + this.radius * Math.sin(i * 2 * Math.PI / angles));
         }
         ctx.fillStyle = this.color;
         ctx.fill();
@@ -36,7 +37,13 @@
         this.x += this.dx;
         this.y += this.dy;
         // on fait bouger les particuless
+
+        if(angles < 7){
+          angles += 0.0001;
+        }
+        
         this.draw();
+
       }
     }
 
