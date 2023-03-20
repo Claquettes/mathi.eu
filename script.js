@@ -35,7 +35,7 @@
         this.y += this.dy;
         // on fait bouger les particuless
         if(angles < 6){
-          angles += 0.0001;
+          angles += 0.0004;
         }
         this.draw();
       }
