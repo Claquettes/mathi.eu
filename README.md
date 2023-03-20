@@ -1,1 +1,1 @@
-Hosted at https://ponton-mathi.eu
+A simple but effective template for your Personnal page, using anime.js.
