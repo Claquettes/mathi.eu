@@ -41,7 +41,7 @@
       }
     }
     function init() {
-      for (var i = 0; i < 70; i++) {
+      for (var i = 0; i < 50; i++) {
         var x = Math.random() * width;
         var y = Math.random() * height;
         var dx = (Math.random() - 0.5) * 2;
