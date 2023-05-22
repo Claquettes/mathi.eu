@@ -2,7 +2,6 @@
     var ctx = canvas.getContext("2d");
     var width = canvas.width = window.innerWidth;
     var height = canvas.height = window.innerHeight;
-
     var particles = [];
     var angles = 3; // on fait un Hexagone
 
@@ -24,12 +23,10 @@
         ctx.fill();
         ctx.closePath();
       }
-
       this.update = function() {
         if (this.x + this.radius > width || this.x - this.radius < 0) {
           this.dx = -this.dx;
         }
-
         if (this.y + this.radius > height || this.y - this.radius < 0) {
           this.dy = -this.dy;
         }
@@ -37,18 +34,14 @@
         this.x += this.dx;
         this.y += this.dy;
         // on fait bouger les particuless
-
-        if(angles < 7){
-          angles += 0.0001;
+        if(angles < 6){
+          angles += 0.0004;
         }
-        
         this.draw();
-
       }
     }
-
     function init() {
-      for (var i = 0; i < 70; i++) {
+      for (var i = 0; i < 50; i++) {
         var x = Math.random() * width;
         var y = Math.random() * height;
         var dx = (Math.random() - 0.5) * 2;
@@ -57,7 +50,6 @@
         particles.push(new Particle(x, y, dx, dy, radius, "#FFF"));
       }
     }
-
     function animate() {
       requestAnimationFrame(animate);
       ctx.clearRect(0, 0, width, height);
@@ -65,10 +57,8 @@
         particles[i].update();
       }
     }
-
     init();
     animate();
-
     anime({
       targets: 'canvas',
       duration: 5000,
