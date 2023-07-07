@@ -1,68 +1,55 @@
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    var width = canvas.width = window.innerWidth;
-    var height = canvas.height = window.innerHeight;
-    var particles = [];
-    var angles = 3; // on fait un Hexagone
+function getRandomSize() {
+  return Math.floor(Math.random() * 150) + 100; // Random size between 100 and 250
+}
 
-    function Particle(x, y, dx, dy, radius, color) {
-      this.x = x;
-      this.y = y;
-      this.dx = dx;
-      this.dy = dy;
-      this.radius = radius;
-      this.color = color;
+function createCloud() {
+  const cloud = document.createElement('span');
+  cloud.classList.add('cloud');
+  cloud.style.top = Math.random() * 100 + '%';
+  cloud.style.left = Math.random() * 100 + '%';
+  cloud.style.fontSize = getRandomSize() + 'px';
+  cloud.textContent = '☁';
 
-      this.draw = function() {
-        ctx.beginPath();
-        ctx.moveTo(this.x + this.radius * Math.cos(0), this.y + this.radius * Math.sin(0));
-        for (var i = 1; i < angles; i++) { 
-          ctx.lineTo(this.x + this.radius * Math.cos(i * 2 * Math.PI / angles), this.y + this.radius * Math.sin(i * 2 * Math.PI / angles));
-        }
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.closePath();
-      }
-      this.update = function() {
-        if (this.x + this.radius > width || this.x - this.radius < 0) {
-          this.dx = -this.dx;
-        }
-        if (this.y + this.radius > height || this.y - this.radius < 0) {
-          this.dy = -this.dy;
-        }
-        // on fait rebondir les particules sur les bords de la fenêtre
-        this.x += this.dx;
-        this.y += this.dy;
-        // on fait bouger les particuless
-        if(angles < 6){
-          angles += 0.0004;
-        }
-        this.draw();
-      }
+  return cloud;
+}
+
+function addClouds() {
+  const container = document.querySelector('.cloudy-bg');
+  const numClouds = 20;
+
+  for (let i = 0; i < numClouds; i++) {
+    const cloud = createCloud();
+    container.appendChild(cloud);
+  }
+
+  anime({
+    targets: '.cloudy-bg .cloud',
+    translateX: [
+      { value: '-200%', duration: 0 },
+      { value: '100%', duration: 5000 }
+    ],
+    opacity: [
+      { value: 0.8, duration: 1000 },
+      { value: 0, duration: 4000 },
+      { value: 0.8, duration: 1000 }
+    ],
+    delay: anime.stagger(200),
+    easing: 'easeOutQuad',
+    loop: true,
+    complete: function(anim) {
+      anim.animatables.forEach(function(animatable) {
+        anime({
+          targets: animatable.target,
+          opacity: 0,
+          duration: 1000,
+          complete: function() {
+            animatable.target.remove();
+          }
+        });
+      });
+      addClouds();
     }
-    function init() {
-      for (var i = 0; i < 50; i++) {
-        var x = Math.random() * width;
-        var y = Math.random() * height;
-        var dx = (Math.random() - 0.5) * 2;
-        var dy = (Math.random() - 0.5) * 2;
-        var radius = Math.random() * 95 + 20;
-        particles.push(new Particle(x, y, dx, dy, radius, "#FFF"));
-      }
-    }
-    function animate() {
-      requestAnimationFrame(animate);
-      ctx.clearRect(0, 0, width, height);
-      for (var i = 0; i < particles.length; i++) {
-        particles[i].update();
-      }
-    }
-    init();
-    animate();
-    anime({
-      targets: 'canvas',
-      duration: 5000,
-      easing: 'easeIn',
-      opacity: 0,
-      loop: true
-    });
+  });
+}
+
+addClouds();
