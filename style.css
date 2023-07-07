@@ -164,3 +164,10 @@ canvas {
 .home_button{
     z-index: 1;
 }
+
+iframe{
+    width: 90%;
+    height: 40%;
+    padding: 5%;
+    border-radius: 10px;
+}

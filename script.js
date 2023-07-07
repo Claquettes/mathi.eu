@@ -26,7 +26,7 @@ function addClouds() {
     targets: '.cloudy-bg .cloud',
     translateX: [
       { value: '-200%', duration: 0 },
-      { value: '100%', duration: 5000 }
+      { value: '100%', duration: 7000 }
     ],
     opacity: [
       { value: 0.8, duration: 1000 },
